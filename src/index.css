@@ -2,6 +2,11 @@
 :root {
   --darkColor: #111318;
   --fontColor: #eee;
+  --faint: rgba(235, 230, 230, 0.2);
+  --fontHover: rgb(130, 170, 197);
+  --teal: #008080;
+  --green: rgb(18, 182, 18);
+  --red: rgb(235, 29, 29);
 }
 
 body {
@@ -10,8 +15,96 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.header {
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
   text-transform: capitalize;
   font-size: 2rem;
   font-weight: 500;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5rem;
+  border-radius: 10px;
+  background-color: var(--teal);
+  margin-bottom: 2rem;
+}
+
+.form input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  caret-color: var(--fontColor);
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--fontColor);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-transform: capitalize;
+  padding: 1rem;
+}
+
+.img__data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+.row__data {
+  transition: 0.2s all ease;
+}
+
+.row__data:hover {
+  box-shadow: 1px 2px 5px var(--teal);
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--fontHover);
+}
+
+.negative {
+  color: var(--red);
+}
+
+.positive {
+  color: var(--green);
+}
+
+/* loader styles */
+
+.loading__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  top: 50%;
+}
+
+.load {
+  height: 50px;
+  width: 50px;
+  background-color: var(--faint);
+  border-radius: 50%;
 }
