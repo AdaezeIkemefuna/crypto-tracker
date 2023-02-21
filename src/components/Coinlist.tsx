@@ -35,7 +35,6 @@ export default function Coinlist() {
 
   useEffect(() => {
     refetch();
-    console.log("refetched");
   }, []);
 
   if (isLoading) {
@@ -79,8 +78,8 @@ export default function Coinlist() {
             <th>Coin</th>
             <th>Current Price</th>
             <th>24h</th>
-            <th>Volume</th>
-            <th>Market Cap</th>
+            <th className="no_display">Volume</th>
+            <th className="no_display">Market Cap</th>
           </tr>
         </thead>
 
@@ -96,7 +95,7 @@ export default function Coinlist() {
                 <img src={coin?.image} alt="img" width={"40px"} />
                 {coin?.symbol}
               </td>
-              <td>${coin?.current_price}</td>
+              <td>${coin?.current_price.toLocaleString()}</td>
               <td
                 className={
                   Number(coin?.price_change_percentage_24h) < 0
@@ -106,8 +105,12 @@ export default function Coinlist() {
               >
                 {coin?.price_change_percentage_24h}%
               </td>
-              <td>${coin?.total_volume}</td>
-              <td>${coin?.market_cap}</td>
+              <td className="no_display">
+                ${coin?.total_volume.toLocaleString()}
+              </td>
+              <td className="no_display">
+                ${coin?.market_cap.toLocaleString()}
+              </td>
             </tr>
           ))}
         </tbody>

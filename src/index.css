@@ -7,6 +7,7 @@
   --teal: #008080;
   --green: rgb(18, 182, 18);
   --red: rgb(235, 29, 29);
+  --blue: rgb(59, 59, 172);
 }
 
 body {
@@ -26,6 +27,7 @@ header {
   text-transform: capitalize;
   font-size: 2rem;
   font-weight: 500;
+  text-align: center;
 }
 
 .form {
@@ -51,12 +53,14 @@ header {
 table {
   width: 100%;
   border-collapse: collapse;
+  overflow: hidden;
 }
 
 th,
 td {
   text-transform: capitalize;
   padding: 1rem;
+  text-align: center;
 }
 
 .img__data {
@@ -107,4 +111,151 @@ td {
   width: 50px;
   background-color: var(--faint);
   border-radius: 50%;
+}
+
+/* SINGLE PAGE STYLES */
+.singleCoin__wrapper {
+  margin: 4rem 6rem;
+}
+
+.head {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 2rem;
+  text-transform: capitalize;
+  box-shadow: 6px 5px 10px #000000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.mid_section--1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 6px 5px 10px #000000;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.mid_section--1.second > * {
+  width: 40%;
+}
+
+.mid__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.mid__left > span,
+.go_back {
+  background-color: var(--blue);
+  width: max-content;
+  padding: 0.2rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+}
+
+.go_back {
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  transition: all 0.2s ease;
+}
+
+.go_back:hover {
+  cursor: pointer;
+  background-color: rgba(147, 130, 243, 0.5);
+}
+
+.img__data {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+
+.mid__right {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 4rem;
+}
+
+.single__head > tr,
+.single__head > th {
+  font-weight: 700;
+  border-left: 1px solid var(--darkColor);
+  background-color: var(--faint);
+}
+
+.hour_change {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--faint);
+  width: 100%;
+}
+
+.hour_change h3 {
+  text-transform: capitalize;
+}
+
+.about > h1 {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.about > p {
+  text-align: justify;
+  line-height: 1.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .no_display {
+    display: none;
+  }
+
+  html {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 0.7rem;
+  }
+
+  .singleCoin__wrapper {
+    margin: 2rem;
+  }
+
+  .go_back {
+    display: none;
+  }
+
+  .mid__right {
+    margin-right: 0;
+  }
+
+  .single__table {
+    display: none;
+  }
+
+  .mid_section--1.second {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .mid_section--1.second > * {
+    width: 100%;
+  }
+
+  .about p {
+    width: 100%;
+    overflow-x: hidden;
+  }
 }
